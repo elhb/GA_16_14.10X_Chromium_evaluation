@@ -8,6 +8,7 @@ import multiprocessing
 import time
 import os
 import shutil
+
 #
 # set workpath and other variables
 #
@@ -33,6 +34,9 @@ CHUNKS_PER_PROCESS = 10
 
 def main():
     
+    import time
+    import shutil
+    
     sys.stderr.write('#INFO: starting script.\n')
     sys.stderr.write('#INFO: going to work with '+str(NUMBER_OF_PARALLEL_PROCESSES+1)+' processes in parallel.\n')
 
@@ -44,12 +48,14 @@ def main():
     
     gc_calculator_process = multiprocessing.Process(target=calculate_region_gc)
     gc_calculator_process.start()
-    import time
+    N_calculator_process = multiprocessing.Process(target=calculate_region_Ns)
+    N_calculator_process.start()
+    
     time.sleep(20)
     create_per_sample_tables()
     calculate_average_coverage_of_regions()
-    import shutil
-    shutil.copy2(DATABASE_PATH,WORK_PATH+'/results/database.sqlite3.COMPLETE.db')
+    
+    # shutil.copy2(DATABASE_PATH,WORK_PATH+'/results/database.sqlite3.COMPLETE.db')
 
 def calculate_average_coverage_of_regions():    
     
@@ -495,6 +501,136 @@ def imap_func_region_gc(region_chunk):
 
     return return_chunk
     
+def calculate_region_Ns():
+    
+    import sys
+    from misc import Progress, formatSecods
+    import sqlite3
+    import os
+    import multiprocessing
+    import operator
+    import time
+    
+    sys.stderr.write('#INFO: process '+str(os.getpid())+' calculating N content for regions ...\n')
+    
+    #
+    # check if table column exists and add if needed
+    #
+    database = sqlite3.connect(DATABASE_PATH)
+    columnNames = [col[1] for col in database.cursor().execute('PRAGMA table_info(regions)').fetchall()]
+    if 'N_content' not in columnNames:
+        sys.stderr.write('#INFO: process '+str(os.getpid())+' adding column N_content to regions table in database ...\n')
+        database.cursor().execute('alter table regions add column N_content REAL')
+    database.commit()
+    database.close()
+    
+    #
+    # get count of regoins to analyze and create progress meter
+    #
+    database = sqlite3.connect(DATABASE_PATH)
+    tmp_region_count_already_analyzed = len(database.cursor().execute('SELECT region_id FROM regions WHERE N_content IS NOT NULL').fetchall())
+    sys.stderr.write('#INFO: '+str(tmp_region_count_already_analyzed)+' regions already analyzed for N content.\n')
+    tmp_region_count = len(database.cursor().execute('SELECT region_id FROM regions WHERE N_content IS NULL').fetchall())
+    p_meter = Progress(tmp_region_count, printint=5, unit='windows_N_analyzed_by_process_'+str(os.getpid())+'')
+    sys.stderr.write('#INFO: process '+str(os.getpid())+' starting to parse '+str(tmp_region_count)+' regions for N content ...\n')
+    regions = database.cursor().execute('SELECT regions.region_id, chromosomes.chromosome_name, regions.start_position, regions.end_position FROM regions JOIN chromosomes ON chromosomes.chromosome_id = regions.chromosome_id WHERE regions.N_content IS NULL').fetchall()
+    database.close()
+    sys.stderr.write('#INFO: process '+str(os.getpid())+' splitting regions into chunks for N calculation.\n')
+    region_chunks = [[]]
+    index = 0
+    region_chunk_size = (len(regions)/(multiprocessing.cpu_count()-len(SAMPLES)*3))/10
+    sys.stderr.write('#INFO: process '+str(os.getpid())+' will into use a chunks size of '+str(region_chunk_size)+' regions for N calculation.\n')
+    for region in regions:
+        region_chunks[index].append( region )
+        if len(region_chunks[index]) >= region_chunk_size:
+            region_chunks.append([])
+            index += 1
+    sys.stderr.write('#INFO: process '+str(os.getpid())+' will work with '+str(len(region_chunks))+' region chunks for N calculation.\n')
+    if len(region_chunks) == 0: return ''
+    
+    #
+    # do work
+    #
+    sys.stderr.write('#INFO: process '+str(os.getpid())+' starting '+str(multiprocessing.cpu_count()-len(SAMPLES)*3)+' children for region chunks N calculation.\n')
+    pool = multiprocessing.Pool(processes=multiprocessing.cpu_count()-len(SAMPLES)*3)
+    results = pool.imap(imap_func_region_Ns, region_chunks, chunksize=1)
+
+    update_values = {}
+    last_update_time = time.time()
+    for return_chunk in results:
+
+        for N_content, region_id in return_chunk:
+            p_meter.update()
+            update_values[region_id] = N_content
+
+            if len(update_values) >= len(return_chunk) and time.time()-last_update_time > 60:#1e3*2:
+                sys.stderr.write('#INFO: process '+str(os.getpid())+' '+str(len(update_values))+' regions N content calculated updating database ....\n')
+                update_start_time = time.time()
+                update_values = [(N_content,region_id) for region_id, N_content in sorted(update_values.iteritems(), key=operator.itemgetter(0))]
+                # print update_values[0:100]
+                updated = False
+                while not updated:
+                    try:
+                        database = sqlite3.connect(DATABASE_PATH)
+                        database.cursor().executemany('UPDATE regions SET N_content=? WHERE region_id=?',update_values)
+                        database.commit()
+                        database.close()
+                        update_values = {}
+                        updated = True
+                        last_update_time = time.time()
+                    except sqlite3.OperationalError as err:
+                        if str(err) == 'database is locked':
+                            sys.stderr.write('# WARNING: from process '+str(os.getpid())+' database was locked trying to write data N content calculation waiting 1s and trying again...\n');
+                            time.sleep(1)
+                        else:
+                            raise err
+                sys.stderr.write('#INFO: process '+str(os.getpid())+' database updated in '+formatSecods(int(round(time.time()-update_start_time,0)))+'.\n')
+
+    pool.close()
+    pool.join()
+
+    sys.stderr.write('#INFO: process '+str(os.getpid())+' last N chunk complete, updating database ....\n')
+    update_values = [(N_content,region_id) for region_id, N_content in sorted(update_values.iteritems(), key=operator.itemgetter(0))]
+    updated = False
+    while not updated:
+        try:
+            database = sqlite3.connect(DATABASE_PATH)
+            database.cursor().executemany('UPDATE regions SET N_content=? WHERE region_id=?',update_values)
+            database.commit()
+            database.close()
+            updated = True
+        except sqlite3.OperationalError as err:
+            if str(err) == 'database is locked':
+                sys.stderr.write('# WARNING: from process '+str(os.getpid())+' database was locked trying to write data N content calculation waiting 1s and trying again...\n');
+                time.sleep(1)
+            else:
+                raise err
+    
+    sys.stderr.write('#INFO: process '+str(os.getpid())+' N content calculation complete.\n')
+
+def imap_func_region_Ns(region_chunk):
+    
+    import pysam
+    import os
+    
+    sys.stderr.write('#INFO: process '+str(os.getpid())+' starting to work on N calculation chunk with regions '+str(region_chunk[0][0])+' to '+str(region_chunk[-1][0])+' ...\n')
+
+    return_chunk = []
+    
+    reference_fasta = pysam.FastaFile(REFERENCE_FASTA_FILE)
+    
+    for region_id, chromosome_name, start_position, end_position in  region_chunk:
+        
+        region_sequence = reference_fasta.fetch(reference=str(chromosome_name),start=start_position,end=end_position)
+        N_content = region_sequence.count('N')
+        return_chunk.append((N_content,region_id))
+        
+    reference_fasta.close()
+    
+    sys.stderr.write('#INFO: process '+str(os.getpid())+' chunk with regions '+str(region_chunk[0][0])+' to '+str(region_chunk[-1][0])+' complete, returing chunk with results to parent.\n')
+
+    return return_chunk
+ 
 #database.crusor().execute('alter table regions add column '+sample+' int')
 #database.crusor().execute('alter table regions add column '+sample+' varchar('+str(max([len(sample_name) for sample_name in SAMPLES.keys()]))+')')
 #print round(100*float(region_id)/tmp_region_count,2), chromosome_name, start_position, end_position, average_read_depth

@@ -19,7 +19,7 @@ SAMPLES = {
     'NA12878_PCRfree':{'bam':WORK_PATH+'/data/NA12878_illumina_PCRfree/NA12878_S1.bam','name':'NA12878_PCRfree'}
 }
 
-DATABASE_PATH = WORK_PATH+'/results/database.sqlite3.COMPLETE.db'
+DATABASE_PATH = WORK_PATH+'/results/database.sqlite3.with_N.db'
 REFERENCE_FASTA_FILE = '/proj/b2014005/SEAseq/ucsc.hg19.fasta'
 WINDOW_SIZE = int(1e4)
 NUMBER_OF_PARALLEL_PROCESSES = max(len(SAMPLES)*3,multiprocessing.cpu_count()-1) # +1 for the gc calculation
@@ -58,12 +58,12 @@ def main():
     select_string = """SELECT
     regions.region_id,
     chromosomes.chromosome_name,
-    regions.start_position, regions.end_position, regions.gc_content,
+    regions.start_position, regions.end_position, regions.gc_content, regions.N_content,
     """+', '.join([sample+'_regions_info.average_read_depth' for sample in SAMPLES])+"""
     FROM regions
         INNER JOIN chromosomes
             ON chromosomes.chromosome_id = regions.chromosome_id """+' '.join(['INNER JOIN '+sample+'_regions_info ON '+sample+'_regions_info.region_id = regions.region_id' for sample in SAMPLES])
-    result_format = ['region_id','chromosome_name','start_position','end_position','gc_content']+[sample for sample in SAMPLES]
+    result_format = ['region_id','chromosome_name','start_position','end_position','gc_content','N_content']+[sample for sample in SAMPLES]
     regions = database.cursor().execute(select_string)#.fetchall()
     
     formatted_regions = []
@@ -77,13 +77,14 @@ def main():
         
         region_dict = {result_format[i]:region[i] for i in xrange(len(region))}
         
+        if region_dict['N_content'] > WINDOW_SIZE*0.5: continue # EXCLUDE ALL REGIONS WITH MORE THAN 50% N CONTENT
         
         formatted_regions.append(
            region_dict
         )
         
         for header in ['region_id','chromosome_name','start_position','end_position','gc_content']: out_str += str(region_dict[header]).replace('.',',')+'\t'
-
+        
         for sample in SAMPLES:
                 norm_avg_rd[sample] = region_dict[sample]/(1e-6*1e-2*total_mapped_reads[sample]) # average read depth normalized per 100M mapped reads
                 out_str += str(norm_avg_rd[sample]).replace('.',',')+'\t'
