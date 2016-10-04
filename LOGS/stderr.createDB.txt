@@ -1,0 +1,562 @@
+#INFO: starting script.
+#INFO: going to work with 16 processes in parallel.
+#INFO: creating regions table in database.
+#INFO: creating chromosomes table in database.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#WARNING: skipping reference sequence chr19_gl000208_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr21_gl000210_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr6_apd_hap1 only found in subset of the samples (referece_fasta).
+#WARNING: skipping reference sequence hs37d5 only found in subset of the samples (GM12878_B,GM12878_A,NA12878_10x).
+#INFO: chromosome chr13 found in all samples with length 115169878.
+#INFO: chromosome chr12 found in all samples with length 133851895.
+#INFO: chromosome chr11 found in all samples with length 135006516.
+#INFO: chromosome chr10 found in all samples with length 135534747.
+#INFO: chromosome chr17 found in all samples with length 81195210.
+#INFO: chromosome chr16 found in all samples with length 90354753.
+#INFO: chromosome chr15 found in all samples with length 102531392.
+#INFO: chromosome chr14 found in all samples with length 107349540.
+#INFO: chromosome chr19 found in all samples with length 59128983.
+#INFO: chromosome chr18 found in all samples with length 78077248.
+#WARNING: skipping reference sequence chr9_gl000198_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000239 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000238 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000233 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000232 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000231 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000230 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000237 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000236 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000235 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000234 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr6_qbl_hap6 only found in subset of the samples (referece_fasta).
+#WARNING: skipping reference sequence chr11_gl000202_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr17_gl000206_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr6_cox_hap2 only found in subset of the samples (referece_fasta).
+#WARNING: skipping reference sequence chr4_gl000193_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000248 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000249 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000246 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000247 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000244 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000245 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000242 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000243 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000240 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000241 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr17_gl000204_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr17_ctg5_hap1 only found in subset of the samples (referece_fasta).
+#WARNING: skipping reference sequence chr17_gl000205_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr9_gl000199_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr9_gl000201_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#INFO: chromosome chr8 found in all samples with length 146364022.
+#WARNING: skipping reference sequence chr6_ssto_hap7 only found in subset of the samples (referece_fasta).
+#WARNING: skipping reference sequence chr8_gl000197_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr6_dbb_hap3 only found in subset of the samples (referece_fasta).
+#WARNING: skipping reference sequence chr7_gl000195_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr1_gl000191_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr4_ctg9_hap1 only found in subset of the samples (referece_fasta).
+#INFO: chromosome chr3 found in all samples with length 198022430.
+#INFO: chromosome chr2 found in all samples with length 243199373.
+#INFO: chromosome chr1 found in all samples with length 249250621.
+#WARNING: skipping reference sequence chr17_gl000203_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000225 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#INFO: chromosome chrY found in all samples with length 59373566.
+#INFO: chromosome chrX found in all samples with length 155270560.
+#WARNING: skipping reference sequence chr9_gl000200_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#INFO: chromosome chr9 found in all samples with length 141213431.
+#INFO: chromosome chrM found in all samples with length 16571.
+#WARNING: skipping reference sequence chr8_gl000196_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr6_mann_hap4 only found in subset of the samples (referece_fasta).
+#WARNING: skipping reference sequence chrUn_gl000211 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000213 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000212 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000215 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000214 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000217 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000216 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000219 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000218 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr19_gl000209_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#INFO: chromosome chr22 found in all samples with length 51304566.
+#INFO: chromosome chr20 found in all samples with length 63025520.
+#INFO: chromosome chr21 found in all samples with length 48129895.
+#WARNING: skipping reference sequence chr6_mcf_hap5 only found in subset of the samples (referece_fasta).
+#INFO: chromosome chr7 found in all samples with length 159138663.
+#INFO: chromosome chr6 found in all samples with length 171115067.
+#INFO: chromosome chr5 found in all samples with length 180915260.
+#INFO: chromosome chr4 found in all samples with length 191154276.
+#WARNING: skipping reference sequence chrUn_gl000228 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000229 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr1_gl000192_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000224 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr4_gl000194_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000226 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000227 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000220 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000221 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000222 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chrUn_gl000223 only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#WARNING: skipping reference sequence chr18_gl000207_random only found in subset of the samples (referece_fasta,GM12878_B,GM12878_A,NA12878_10x).
+#INFO: 25 reference sequences out of 94 pass the filters and will be analyzed.
+#INFO: filling chromosomes table with data.
+#INFO: creating windows of 10000 bases.
+#INFO: 309581 genomic windows created.
+#INFO: process 64803 calculating GC content for regions ...
+#INFO: process 64803 adding column gc_content to regions table in database ...
+#INFO: 0 regions already analyzed for GC content.
+#INFO: process 64803 starting to parse 309581 regions for GC content ...
+#INFO: process 64803 splitting regions into chunks for gc calculation.
+#INFO: process 64803 will into use a chunks size of 7739 regions for gc calculation.
+#INFO: process 64803 will work with 41 region chunks for gc calculation.
+#INFO: process 64803 starting 4 children for region chunks gc calculation.
+#INFO: process 64804 starting to work on gc calculation chunk with regions 0 to 7738 ...
+#INFO: process 64805 starting to work on gc calculation chunk with regions 7739 to 15477 ...
+#INFO: process 64806 starting to work on gc calculation chunk with regions 15478 to 23216 ...
+#INFO: process 64807 starting to work on gc calculation chunk with regions 23217 to 30955 ...
+#INFO: process 64804 chunk with regions 0 to 7738 complete, returing chunk with results to parent.
+#INFO: process 64804 starting to work on gc calculation chunk with regions 30956 to 38694 ...
+#INFO: process 64805 chunk with regions 7739 to 15477 complete, returing chunk with results to parent.
+#INFO: process 64805 starting to work on gc calculation chunk with regions 38695 to 46433 ...
+#INFO: process 64806 chunk with regions 15478 to 23216 complete, returing chunk with results to parent.
+#INFO: process 64806 starting to work on gc calculation chunk with regions 46434 to 54172 ...
+#Progress => 5%, 2961.77 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:07, left: 0h 1min 40s
+#INFO: process 64807 chunk with regions 23217 to 30955 complete, returing chunk with results to parent.
+#INFO: process 64807 starting to work on gc calculation chunk with regions 54173 to 61911 ...
+#Progress => 10%, 84686.5 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:07, left: 0h 0min 3s
+#INFO: process 64804 chunk with regions 30956 to 38694 complete, returing chunk with results to parent.
+#INFO: process 64804 starting to work on gc calculation chunk with regions 61912 to 69650 ...
+#INFO: process 64805 chunk with regions 38695 to 46433 complete, returing chunk with results to parent.
+#INFO: process 64805 starting to work on gc calculation chunk with regions 69651 to 77389 ...
+#Progress => 15%, 4917.09 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:11, left: 0h 0min 54s
+#INFO: process 64806 chunk with regions 46434 to 54172 complete, returing chunk with results to parent.
+#INFO: process 64806 starting to work on gc calculation chunk with regions 77390 to 85128 ...
+#INFO: process 64807 chunk with regions 54173 to 61911 complete, returing chunk with results to parent.
+#INFO: process 64807 starting to work on gc calculation chunk with regions 85129 to 92867 ...
+#Progress => 20%, 41871.57 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:11, left: 0h 0min 6s
+#INFO: process 64804 chunk with regions 61912 to 69650 complete, returing chunk with results to parent.
+#INFO: process 64804 starting to work on gc calculation chunk with regions 92868 to 100606 ...
+#INFO: process 64806 chunk with regions 77390 to 85128 complete, returing chunk with results to parent.
+#INFO: process 64805 chunk with regions 69651 to 77389 complete, returing chunk with results to parent.
+#INFO: process 64806 starting to work on gc calculation chunk with regions 100607 to 108345 ...
+#INFO: process 64805 starting to work on gc calculation chunk with regions 108346 to 116084 ...
+#Progress => 25%, 6631.98 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:13, left: 0h 0min 35s
+#INFO: process 64807 chunk with regions 85129 to 92867 complete, returing chunk with results to parent.
+#INFO: process 64807 starting to work on gc calculation chunk with regions 116085 to 123823 ...
+#Progress => 30%, 21644.65 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:14, left: 0h 0min 10s
+#INFO: process 64804 chunk with regions 92868 to 100606 complete, returing chunk with results to parent.
+#INFO: process 64804 starting to work on gc calculation chunk with regions 123824 to 131562 ...
+#INFO: process 64805 chunk with regions 108346 to 116084 complete, returing chunk with results to parent.
+#INFO: process 64805 starting to work on gc calculation chunk with regions 131563 to 139301 ...
+#INFO: process 64806 chunk with regions 100607 to 108345 complete, returing chunk with results to parent.
+#INFO: process 64806 starting to work on gc calculation chunk with regions 139302 to 147040 ...
+#Progress => 35%, 8158.93 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:16, left: 0h 0min 25s
+#INFO: process 64807 chunk with regions 116085 to 123823 complete, returing chunk with results to parent.
+#INFO: process 64807 starting to work on gc calculation chunk with regions 147041 to 154779 ...
+#Progress => 40%, 15602.01 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:17, left: 0h 0min 12s
+#INFO: process 64806 chunk with regions 139302 to 147040 complete, returing chunk with results to parent.
+#INFO: process 64804 chunk with regions 123824 to 131562 complete, returing chunk with results to parent.
+#INFO: process 64806 starting to work on gc calculation chunk with regions 154780 to 162518 ...
+#INFO: process 64804 starting to work on gc calculation chunk with regions 162519 to 170257 ...
+#INFO: process 64805 chunk with regions 131563 to 139301 complete, returing chunk with results to parent.
+#INFO: process 64805 starting to work on gc calculation chunk with regions 170258 to 177996 ...
+#Progress => 45%, 8831.33 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:19, left: 0h 0min 19s
+#INFO: process 64807 chunk with regions 147041 to 154779 complete, returing chunk with results to parent.
+#INFO: process 64807 starting to work on gc calculation chunk with regions 177997 to 185735 ...
+#Progress => 50%, 13827.15 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:20, left: 0h 0min 11s
+#INFO: process 64806 chunk with regions 154780 to 162518 complete, returing chunk with results to parent.
+#INFO: process 64806 starting to work on gc calculation chunk with regions 185736 to 193474 ...
+#INFO: process 64804 chunk with regions 162519 to 170257 complete, returing chunk with results to parent.
+#INFO: process 64804 starting to work on gc calculation chunk with regions 193475 to 201213 ...
+#INFO: process 64805 chunk with regions 170258 to 177996 complete, returing chunk with results to parent.
+#INFO: process 64805 starting to work on gc calculation chunk with regions 201214 to 208952 ...
+#Progress => 55%, 9423.89 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:21, left: 0h 0min 15s
+#INFO: creating GM12878_B_regions_info table.
+#INFO: creating NA12878_PCRfree_regions_info table.
+#INFO: creating GM12878_A_regions_info table.
+#INFO: creating NA12878_10x_regions_info table.
+#INFO: process 64807 chunk with regions 177997 to 185735 complete, returing chunk with results to parent.
+#INFO: process 64807 starting to work on gc calculation chunk with regions 208953 to 216691 ...
+#Progress => 60%, 12720.51 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:23, left: 0h 0min 10s
+#INFO: calculating per sample coverage.
+#INFO: distributing work between processes ...
+#INFO: process 64804 chunk with regions 193475 to 201213 complete, returing chunk with results to parent.
+#INFO: process 64804 starting to work on gc calculation chunk with regions 216692 to 224430 ...
+#INFO: process 64805 chunk with regions 201214 to 208952 complete, returing chunk with results to parent.
+#INFO: process 64805 starting to work on gc calculation chunk with regions 224431 to 232169 ...
+#INFO: process 64806 chunk with regions 185736 to 193474 complete, returing chunk with results to parent.
+#INFO: process 64806 starting to work on gc calculation chunk with regions 232170 to 239908 ...
+#Progress => 65%, 8977.32 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:24, left: 0h 0min 12s
+#INFO: each process will work with chunks of 8256 windows.
+#INFO: creating the chunks ...
+#INFO: process 64807 chunk with regions 208953 to 216691 complete, returing chunk with results to parent.
+#INFO: process 64807 starting to work on gc calculation chunk with regions 239909 to 247647 ...
+#Progress => 70%, 11622.84 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:26, left: 0h 0min 8s
+#INFO: process 64805 chunk with regions 224431 to 232169 complete, returing chunk with results to parent.
+#INFO: process 64805 starting to work on gc calculation chunk with regions 247648 to 255386 ...
+#INFO: process 64804 chunk with regions 216692 to 224430 complete, returing chunk with results to parent.
+#INFO: process 64804 starting to work on gc calculation chunk with regions 255387 to 263125 ...
+#Progress => 75%, 13684.06 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:27, left: 0h 0min 6s
+#INFO: creating chunks for GM12878_B...
+#INFO: skipping 0 already analyzed chunks for GM12878_B.
+#INFO: creating chunks for NA12878_PCRfree...
+#INFO: skipping 0 already analyzed chunks for NA12878_PCRfree.
+#INFO: creating chunks for GM12878_A...
+#INFO: skipping 0 already analyzed chunks for GM12878_A.
+#INFO: creating chunks for NA12878_10x...
+#INFO: skipping 0 already analyzed chunks for NA12878_10x.
+#INFO: process 64806 chunk with regions 232170 to 239908 complete, returing chunk with results to parent.
+#INFO: process 64806 starting to work on gc calculation chunk with regions 263126 to 270864 ...
+#INFO: 152 chunks created.
+#INFO: process 64811 getting coverage data for sample GM12878_A chunk 189888-198143.
+#INFO: process 64812 getting coverage data for sample GM12878_A chunk 156864-165119.
+#INFO: process 64813 getting coverage data for sample NA12878_10x chunk 305472-309580.
+#INFO: process 64814 getting coverage data for sample GM12878_B chunk 107328-115583.
+#INFO: process 64815 getting coverage data for sample NA12878_10x chunk 24768-33023.
+#INFO: process 64816 getting coverage data for sample GM12878_A chunk 57792-66047.
+#INFO: process 64817 getting coverage data for sample GM12878_A chunk 239424-247679.
+#INFO: process 64818 getting coverage data for sample GM12878_A chunk 288960-297215.
+#INFO: process 64819 getting coverage data for sample NA12878_PCRfree chunk 264192-272447.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64820 getting coverage data for sample NA12878_10x chunk 41280-49535.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64821 getting coverage data for sample NA12878_PCRfree chunk 222912-231167.
+#INFO: process 64822 getting coverage data for sample NA12878_10x chunk 148608-156863.
+#INFO: process 64823 getting coverage data for sample NA12878_PCRfree chunk 206400-214655.
+#INFO: process 64824 getting coverage data for sample GM12878_A chunk 24768-33023.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64825 getting coverage data for sample GM12878_B chunk 123840-132095.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64807 chunk with regions 239909 to 247647 complete, returing chunk with results to parent.
+#INFO: process 64807 starting to work on gc calculation chunk with regions 270865 to 278603 ...
+#Progress => 80%, 5471.44 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:30, left: 0h 0min 12s
+#INFO: process 64804 chunk with regions 255387 to 263125 complete, returing chunk with results to parent.
+#INFO: process 64804 starting to work on gc calculation chunk with regions 278604 to 286342 ...
+#INFO: process 64805 chunk with regions 247648 to 255386 complete, returing chunk with results to parent.
+#INFO: process 64805 starting to work on gc calculation chunk with regions 286343 to 294081 ...
+#Progress => 85%, 7787.71 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:32, left: 0h 0min 6s
+#INFO: process 64806 chunk with regions 263126 to 270864 complete, returing chunk with results to parent.
+#INFO: process 64806 starting to work on gc calculation chunk with regions 294082 to 301820 ...
+#INFO: process 64807 chunk with regions 270865 to 278603 complete, returing chunk with results to parent.
+#INFO: process 64807 starting to work on gc calculation chunk with regions 301821 to 309559 ...
+#Progress => 90%, 4000.9 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:36, left: 0h 0min 8s
+#INFO: process 64804 chunk with regions 278604 to 286342 complete, returing chunk with results to parent.
+#INFO: process 64804 starting to work on gc calculation chunk with regions 309560 to 309580 ...
+#INFO: process 64805 chunk with regions 286343 to 294081 complete, returing chunk with results to parent.
+#INFO: process 64804 chunk with regions 309560 to 309580 complete, returing chunk with results to parent.
+#Progress => 95%, 12700.41 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:37, left: 0h 0min 1s
+#INFO: process 64806 chunk with regions 294082 to 301820 complete, returing chunk with results to parent.
+#INFO: process 64807 chunk with regions 301821 to 309559 complete, returing chunk with results to parent.
+#Progress => 100%, 6990.89 windows_gc_analyzed_by_process_64803/second, Sunday, 02 Oct 2016 21:57:39, left: 0h 0min 0s
+#INFO: process 64803 last gc chunk complete, updating database ....
+#INFO: process 64803 GC content calculation complete.
+#INFO: process 64813 getting coverage data for sample GM12878_B chunk 255936-264191.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64811 getting coverage data for sample NA12878_PCRfree chunk 49536-57791.
+#Progress => 1%, 34.09 windows_added_to_db/second, Sunday, 02 Oct 2016 22:00:27, left: 10h 2min 20s
+#INFO: process 64814 getting coverage data for sample NA12878_10x chunk 74304-82559.
+#INFO: process 64825 getting coverage data for sample NA12878_10x chunk 239424-247679.
+#INFO: process 64817 getting coverage data for sample NA12878_PCRfree chunk 99072-107327.
+#INFO: process 64824 getting coverage data for sample NA12878_PCRfree chunk 8256-16511.
+#INFO: process 64818 getting coverage data for sample NA12878_PCRfree chunk 181632-189887.
+#INFO: process 64816 getting coverage data for sample NA12878_PCRfree chunk 165120-173375.
+#INFO: process 64820 getting coverage data for sample GM12878_A chunk 74304-82559.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64812 getting coverage data for sample NA12878_PCRfree chunk 90816-99071.
+#Progress => 2%, 124.26 windows_added_to_db/second, Sunday, 02 Oct 2016 22:02:06, left: 2h 43min 36s
+#INFO: process 64815 getting coverage data for sample GM12878_B chunk 297216-305471.
+#Progress => 3%, 1335.19 windows_added_to_db/second, Sunday, 02 Oct 2016 22:02:16, left: 0h 15min 4s
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#Progress => 4%, 55067.38 windows_added_to_db/second, Sunday, 02 Oct 2016 22:02:16, left: 0h 0min 22s
+#Progress => 5%, 28691.72 windows_added_to_db/second, Sunday, 02 Oct 2016 22:02:16, left: 0h 0min 41s
+#INFO: process 64822 getting coverage data for sample GM12878_A chunk 272448-280703.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64821 getting coverage data for sample GM12878_A chunk 280704-288959.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64823 getting coverage data for sample NA12878_10x chunk 165120-173375.
+#INFO: process 64819 getting coverage data for sample NA12878_10x chunk 115584-123839.
+#Progress => 6%, 169.38 windows_added_to_db/second, Sunday, 02 Oct 2016 22:03:30, left: 1h 55min 9s
+#Progress => 7%, 34267.79 windows_added_to_db/second, Sunday, 02 Oct 2016 22:03:30, left: 0h 0min 34s
+#Progress => 8%, 64689.54 windows_added_to_db/second, Sunday, 02 Oct 2016 22:03:30, left: 0h 0min 18s
+#Progress => 9%, 35960.3 windows_added_to_db/second, Sunday, 02 Oct 2016 22:03:30, left: 0h 0min 32s
+#Progress => 10%, 64433.05 windows_added_to_db/second, Sunday, 02 Oct 2016 22:03:31, left: 0h 0min 17s
+#INFO: process 64813 getting coverage data for sample NA12878_10x chunk 198144-206399.
+#INFO: process 64814 getting coverage data for sample NA12878_10x chunk 231168-239423.
+#INFO: process 64820 getting coverage data for sample NA12878_PCRfree chunk 57792-66047.
+#INFO: process 64825 getting coverage data for sample GM12878_B chunk 206400-214655.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64811 getting coverage data for sample GM12878_B chunk 90816-99071.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#Progress => 11%, 68.26 windows_added_to_db/second, Sunday, 02 Oct 2016 22:06:32, left: 4h 30min 36s
+#Progress => 12%, 59341.38 windows_added_to_db/second, Sunday, 02 Oct 2016 22:06:32, left: 0h 0min 18s
+#INFO: process 64815 getting coverage data for sample NA12878_10x chunk 173376-181631.
+#INFO: process 64822 getting coverage data for sample GM12878_A chunk 90816-99071.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64818 getting coverage data for sample GM12878_A chunk 206400-214655.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64821 getting coverage data for sample GM12878_A chunk 82560-90815.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64823 getting coverage data for sample NA12878_10x chunk 189888-198143.
+#INFO: process 64824 getting coverage data for sample NA12878_PCRfree chunk 115584-123839.
+#INFO: process 64817 getting coverage data for sample NA12878_10x chunk 156864-165119.
+#Progress => 13%, 153.54 windows_added_to_db/second, Sunday, 02 Oct 2016 22:07:53, left: 1h 57min 37s
+#Progress => 14%, 57211.6 windows_added_to_db/second, Sunday, 02 Oct 2016 22:07:53, left: 0h 0min 19s
+#INFO: process 64812 getting coverage data for sample GM12878_A chunk 305472-309580.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64816 getting coverage data for sample NA12878_10x chunk 90816-99071.
+#Progress => 15%, 772.6 windows_added_to_db/second, Sunday, 02 Oct 2016 22:08:09, left: 0h 22min 50s
+#Progress => 16%, 51250.89 windows_added_to_db/second, Sunday, 02 Oct 2016 22:08:09, left: 0h 0min 20s
+#Progress => 17%, 40313.69 windows_added_to_db/second, Sunday, 02 Oct 2016 22:08:10, left: 0h 0min 26s
+#Progress => 18%, 65884.91 windows_added_to_db/second, Sunday, 02 Oct 2016 22:08:10, left: 0h 0min 16s
+#Progress => 19%, 33816.88 windows_added_to_db/second, Sunday, 02 Oct 2016 22:08:10, left: 0h 0min 30s
+#INFO: process 64819 getting coverage data for sample NA12878_10x chunk 272448-280703.
+#Progress => 20%, 1377.61 windows_added_to_db/second, Sunday, 02 Oct 2016 22:08:19, left: 0h 12min 4s
+#INFO: process 64813 getting coverage data for sample GM12878_B chunk 156864-165119.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64812 getting coverage data for sample GM12878_A chunk 16512-24767.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64814 getting coverage data for sample NA12878_10x chunk 33024-41279.
+#Progress => 21%, 105.16 windows_added_to_db/second, Sunday, 02 Oct 2016 22:10:17, left: 2h 36min 1s
+#INFO: process 64825 getting coverage data for sample GM12878_A chunk 165120-173375.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64815 getting coverage data for sample NA12878_PCRfree chunk 272448-280703.
+#INFO: process 64811 getting coverage data for sample NA12878_10x chunk 8256-16511.
+#INFO: process 64823 getting coverage data for sample NA12878_PCRfree chunk 66048-74303.
+#INFO: process 64818 getting coverage data for sample NA12878_10x chunk 16512-24767.
+#INFO: process 64822 getting coverage data for sample GM12878_A chunk 148608-156863.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64821 getting coverage data for sample NA12878_10x chunk 214656-222911.
+#INFO: process 64820 getting coverage data for sample GM12878_A chunk 66048-74303.
+#Progress => 22%, 81.88 windows_added_to_db/second, Sunday, 02 Oct 2016 22:12:48, left: 3h 17min 52s
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#Progress => 23%, 32518.89 windows_added_to_db/second, Sunday, 02 Oct 2016 22:12:49, left: 0h 0min 30s
+#Progress => 24%, 64166.81 windows_added_to_db/second, Sunday, 02 Oct 2016 22:12:49, left: 0h 0min 15s
+#Progress => 25%, 32379.01 windows_added_to_db/second, Sunday, 02 Oct 2016 22:12:49, left: 0h 0min 29s
+#Progress => 26%, 56511.85 windows_added_to_db/second, Sunday, 02 Oct 2016 22:12:49, left: 0h 0min 16s
+#INFO: process 64816 getting coverage data for sample GM12878_B chunk 239424-247679.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64817 getting coverage data for sample GM12878_B chunk 165120-173375.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64819 getting coverage data for sample GM12878_A chunk 214656-222911.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64813 getting coverage data for sample GM12878_B chunk 189888-198143.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64824 getting coverage data for sample NA12878_10x chunk 99072-107327.
+#Progress => 27%, 102.32 windows_added_to_db/second, Sunday, 02 Oct 2016 22:14:50, left: 2h 28min 16s
+#Progress => 28%, 57833.72 windows_added_to_db/second, Sunday, 02 Oct 2016 22:14:51, left: 0h 0min 16s
+#Progress => 29%, 31590.25 windows_added_to_db/second, Sunday, 02 Oct 2016 22:14:51, left: 0h 0min 28s
+#Progress => 30%, 24051.99 windows_added_to_db/second, Sunday, 02 Oct 2016 22:14:52, left: 0h 0min 36s
+#INFO: process 64812 getting coverage data for sample NA12878_PCRfree chunk 288960-297215.
+#Progress => 31%, 201.1 windows_added_to_db/second, Sunday, 02 Oct 2016 22:15:53, left: 1h 11min 20s
+#INFO: process 64825 getting coverage data for sample NA12878_10x chunk 49536-57791.
+#INFO: process 64814 getting coverage data for sample NA12878_10x chunk 57792-66047.
+#Progress => 32%, 506.66 windows_added_to_db/second, Sunday, 02 Oct 2016 22:16:18, left: 0h 27min 54s
+#INFO: process 64811 getting coverage data for sample GM12878_B chunk 231168-239423.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64820 getting coverage data for sample GM12878_B chunk 264192-272447.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64823 getting coverage data for sample GM12878_A chunk 173376-181631.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64822 getting coverage data for sample NA12878_PCRfree chunk 305472-309580.
+#INFO: process 64818 getting coverage data for sample GM12878_A chunk 99072-107327.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64813 getting coverage data for sample GM12878_A chunk 132096-140351.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64821 getting coverage data for sample NA12878_PCRfree chunk 148608-156863.
+#INFO: process 64815 getting coverage data for sample NA12878_10x chunk 0-8255.
+#Progress => 33%, 185.52 windows_added_to_db/second, Sunday, 02 Oct 2016 22:17:24, left: 1h 15min 6s
+#Progress => 34%, 32414.96 windows_added_to_db/second, Sunday, 02 Oct 2016 22:17:25, left: 0h 0min 25s
+#Progress => 35%, 67921.31 windows_added_to_db/second, Sunday, 02 Oct 2016 22:17:25, left: 0h 0min 12s
+#Progress => 36%, 36025.33 windows_added_to_db/second, Sunday, 02 Oct 2016 22:17:25, left: 0h 0min 22s
+#Progress => 37%, 66227.68 windows_added_to_db/second, Sunday, 02 Oct 2016 22:17:25, left: 0h 0min 12s
+#INFO: process 64816 getting coverage data for sample NA12878_PCRfree chunk 247680-255935.
+#INFO: process 64819 getting coverage data for sample GM12878_A chunk 297216-305471.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64817 getting coverage data for sample GM12878_B chunk 173376-181631.
+#Progress => 38%, 215.97 windows_added_to_db/second, Sunday, 02 Oct 2016 22:18:23, left: 0h 59min 44s
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#Progress => 39%, 61659.78 windows_added_to_db/second, Sunday, 02 Oct 2016 22:18:23, left: 0h 0min 12s
+#INFO: process 64822 getting coverage data for sample NA12878_PCRfree chunk 156864-165119.
+#INFO: process 64824 getting coverage data for sample GM12878_B chunk 115584-123839.
+#Progress => 40%, 173.67 windows_added_to_db/second, Sunday, 02 Oct 2016 22:19:34, left: 1h 11min 54s
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64823 getting coverage data for sample GM12878_B chunk 288960-297215.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64811 getting coverage data for sample NA12878_PCRfree chunk 214656-222911.
+#INFO: process 64825 getting coverage data for sample GM12878_A chunk 41280-49535.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64820 getting coverage data for sample NA12878_10x chunk 297216-305471.
+#INFO: process 64815 getting coverage data for sample NA12878_PCRfree chunk 82560-90815.
+#INFO: process 64818 getting coverage data for sample NA12878_PCRfree chunk 24768-33023.
+#INFO: process 64814 getting coverage data for sample GM12878_A chunk 231168-239423.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64813 getting coverage data for sample NA12878_10x chunk 280704-288959.
+#INFO: process 64812 getting coverage data for sample NA12878_10x chunk 206400-214655.
+#Progress => 41%, 91.36 windows_added_to_db/second, Sunday, 02 Oct 2016 22:21:50, left: 2h 14min 25s
+#Progress => 42%, 19858.78 windows_added_to_db/second, Sunday, 02 Oct 2016 22:21:50, left: 0h 0min 36s
+#Progress => 43%, 44655.93 windows_added_to_db/second, Sunday, 02 Oct 2016 22:21:51, left: 0h 0min 16s
+#Progress => 44%, 18385.38 windows_added_to_db/second, Sunday, 02 Oct 2016 22:21:51, left: 0h 0min 38s
+#Progress => 45%, 22188.58 windows_added_to_db/second, Sunday, 02 Oct 2016 22:21:52, left: 0h 0min 31s
+#Progress => 46%, 44661.27 windows_added_to_db/second, Sunday, 02 Oct 2016 22:21:52, left: 0h 0min 15s
+#INFO: process 64817 getting coverage data for sample GM12878_B chunk 198144-206399.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64819 getting coverage data for sample GM12878_B chunk 305472-309580.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64821 getting coverage data for sample GM12878_B chunk 57792-66047.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#Progress => 47%, 142.48 windows_added_to_db/second, Sunday, 02 Oct 2016 22:23:19, left: 1h 17min 30s
+#INFO: process 64816 getting coverage data for sample NA12878_10x chunk 123840-132095.
+#Progress => 48%, 255.2 windows_added_to_db/second, Sunday, 02 Oct 2016 22:24:08, left: 0h 42min 28s
+#Progress => 49%, 29850.6 windows_added_to_db/second, Sunday, 02 Oct 2016 22:24:08, left: 0h 0min 21s
+#INFO: process 64824 getting coverage data for sample GM12878_B chunk 49536-57791.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64823 getting coverage data for sample GM12878_A chunk 33024-41279.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64819 getting coverage data for sample GM12878_B chunk 99072-107327.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64825 getting coverage data for sample NA12878_PCRfree chunk 140352-148607.
+#INFO: process 64822 getting coverage data for sample NA12878_10x chunk 288960-297215.
+#Progress => 50%, 137.48 windows_added_to_db/second, Sunday, 02 Oct 2016 22:25:38, left: 1h 15min 49s
+#Progress => 51%, 28129.83 windows_added_to_db/second, Sunday, 02 Oct 2016 22:25:39, left: 0h 0min 22s
+#INFO: process 64820 getting coverage data for sample GM12878_B chunk 66048-74303.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64814 getting coverage data for sample NA12878_10x chunk 132096-140351.
+#INFO: process 64811 getting coverage data for sample NA12878_10x chunk 140352-148607.
+#Progress => 52%, 410.53 windows_added_to_db/second, Sunday, 02 Oct 2016 22:26:09, left: 0h 24min 23s
+#Progress => 53%, 24074.65 windows_added_to_db/second, Sunday, 02 Oct 2016 22:26:09, left: 0h 0min 24s
+#INFO: process 64817 getting coverage data for sample GM12878_A chunk 115584-123839.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64812 getting coverage data for sample GM12878_A chunk 140352-148607.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64813 getting coverage data for sample GM12878_B chunk 132096-140351.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64818 getting coverage data for sample GM12878_B chunk 41280-49535.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64815 getting coverage data for sample NA12878_PCRfree chunk 255936-264191.
+#Progress => 54%, 153.25 windows_added_to_db/second, Sunday, 02 Oct 2016 22:27:30, left: 1h 2min 37s
+#Progress => 55%, 31041.72 windows_added_to_db/second, Sunday, 02 Oct 2016 22:27:30, left: 0h 0min 18s
+#Progress => 56%, 48442.46 windows_added_to_db/second, Sunday, 02 Oct 2016 22:27:31, left: 0h 0min 11s
+#Progress => 57%, 31231.78 windows_added_to_db/second, Sunday, 02 Oct 2016 22:27:31, left: 0h 0min 17s
+#INFO: process 64821 getting coverage data for sample NA12878_10x chunk 82560-90815.
+#Progress => 58%, 564.5 windows_added_to_db/second, Sunday, 02 Oct 2016 22:27:53, left: 0h 15min 32s
+#INFO: process 64824 getting coverage data for sample GM12878_B chunk 148608-156863.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64816 getting coverage data for sample GM12878_A chunk 49536-57791.
+#Progress => 59%, 228.82 windows_added_to_db/second, Sunday, 02 Oct 2016 22:28:47, left: 0h 37min 26s
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64820 getting coverage data for sample NA12878_PCRfree chunk 0-8255.
+#INFO: process 64823 getting coverage data for sample GM12878_B chunk 181632-189887.
+#Progress => 60%, 349.88 windows_added_to_db/second, Sunday, 02 Oct 2016 22:29:23, left: 0h 23min 53s
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64819 getting coverage data for sample GM12878_B chunk 8256-16511.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#Progress => 61%, 6174.15 windows_added_to_db/second, Sunday, 02 Oct 2016 22:29:25, left: 0h 1min 19s
+#INFO: process 64822 getting coverage data for sample GM12878_B chunk 214656-222911.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64814 getting coverage data for sample NA12878_10x chunk 247680-255935.
+#INFO: process 64812 getting coverage data for sample GM12878_B chunk 16512-24767.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64817 getting coverage data for sample GM12878_B chunk 222912-231167.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64811 getting coverage data for sample GM12878_A chunk 181632-189887.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64813 getting coverage data for sample NA12878_PCRfree chunk 231168-239423.
+#INFO: process 64825 getting coverage data for sample GM12878_A chunk 264192-272447.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#Progress => 62%, 113.29 windows_added_to_db/second, Sunday, 02 Oct 2016 22:31:14, left: 1h 10min 8s
+#Progress => 63%, 55085.02 windows_added_to_db/second, Sunday, 02 Oct 2016 22:31:14, left: 0h 0min 8s
+#Progress => 64%, 33201.77 windows_added_to_db/second, Sunday, 02 Oct 2016 22:31:14, left: 0h 0min 14s
+#Progress => 65%, 61179.61 windows_added_to_db/second, Sunday, 02 Oct 2016 22:31:15, left: 0h 0min 7s
+#Progress => 66%, 36404.47 windows_added_to_db/second, Sunday, 02 Oct 2016 22:31:15, left: 0h 0min 12s
+#INFO: process 64818 getting coverage data for sample NA12878_PCRfree chunk 239424-247679.
+#Progress => 67%, 780.65 windows_added_to_db/second, Sunday, 02 Oct 2016 22:31:31, left: 0h 8min 51s
+#INFO: process 64821 getting coverage data for sample NA12878_10x chunk 264192-272447.
+#INFO: process 64824 getting coverage data for sample GM12878_A chunk 8256-16511.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64823 getting coverage data for sample GM12878_A chunk 0-8255.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64816 getting coverage data for sample GM12878_A chunk 198144-206399.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64815 getting coverage data for sample NA12878_10x chunk 66048-74303.
+#Progress => 68%, 124.2 windows_added_to_db/second, Sunday, 02 Oct 2016 22:33:11, left: 0h 54min 0s
+#Progress => 69%, 46785.53 windows_added_to_db/second, Sunday, 02 Oct 2016 22:33:11, left: 0h 0min 8s
+#INFO: process 64819 getting coverage data for sample GM12878_A chunk 222912-231167.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64820 getting coverage data for sample NA12878_10x chunk 181632-189887.
+#Progress => 70%, 272.73 windows_added_to_db/second, Sunday, 02 Oct 2016 22:33:56, left: 0h 23min 5s
+#Progress => 71%, 52960.68 windows_added_to_db/second, Sunday, 02 Oct 2016 22:33:56, left: 0h 0min 7s
+#INFO: process 64822 getting coverage data for sample NA12878_PCRfree chunk 280704-288959.
+#Progress => 72%, 468.52 windows_added_to_db/second, Sunday, 02 Oct 2016 22:34:23, left: 0h 12min 33s
+#INFO: process 64817 getting coverage data for sample GM12878_B chunk 140352-148607.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64811 getting coverage data for sample NA12878_PCRfree chunk 297216-305471.
+#INFO: process 64812 getting coverage data for sample GM12878_A chunk 123840-132095.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64814 getting coverage data for sample NA12878_PCRfree chunk 123840-132095.
+#Progress => 73%, 179.92 windows_added_to_db/second, Sunday, 02 Oct 2016 22:35:32, left: 0h 31min 33s
+#Progress => 74%, 34293.31 windows_added_to_db/second, Sunday, 02 Oct 2016 22:35:32, left: 0h 0min 10s
+#Progress => 75%, 57748.42 windows_added_to_db/second, Sunday, 02 Oct 2016 22:35:32, left: 0h 0min 5s
+#INFO: process 64825 getting coverage data for sample NA12878_PCRfree chunk 107328-115583.
+#INFO: process 64813 getting coverage data for sample NA12878_PCRfree chunk 16512-24767.
+#Progress => 76%, 271.19 windows_added_to_db/second, Sunday, 02 Oct 2016 22:36:18, left: 0h 18min 39s
+#INFO: process 64823 getting coverage data for sample GM12878_A chunk 247680-255935.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64824 getting coverage data for sample NA12878_10x chunk 222912-231167.
+#INFO: process 64815 getting coverage data for sample NA12878_10x chunk 255936-264191.
+#INFO: process 64819 getting coverage data for sample NA12878_PCRfree chunk 198144-206399.
+#INFO: process 64816 getting coverage data for sample GM12878_B chunk 24768-33023.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64818 getting coverage data for sample NA12878_PCRfree chunk 33024-41279.
+#Progress => 77%, 178.37 windows_added_to_db/second, Sunday, 02 Oct 2016 22:37:27, left: 0h 27min 12s
+#INFO: process 64821 getting coverage data for sample GM12878_B chunk 82560-90815.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#Progress => 78%, 1498.75 windows_added_to_db/second, Sunday, 02 Oct 2016 22:37:36, left: 0h 3min 6s
+#Progress => 79%, 48848.54 windows_added_to_db/second, Sunday, 02 Oct 2016 22:37:36, left: 0h 0min 5s
+#Progress => 80%, 23670.8 windows_added_to_db/second, Sunday, 02 Oct 2016 22:37:36, left: 0h 0min 11s
+#Progress => 81%, 54377.5 windows_added_to_db/second, Sunday, 02 Oct 2016 22:37:37, left: 0h 0min 4s
+#INFO: process 64820 getting coverage data for sample NA12878_PCRfree chunk 41280-49535.
+#INFO: process 64817 getting coverage data for sample GM12878_A chunk 107328-115583.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64812 getting coverage data for sample GM12878_B chunk 247680-255935.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64822 getting coverage data for sample NA12878_PCRfree chunk 74304-82559.
+#Progress => 82%, 68.57 windows_added_to_db/second, Sunday, 02 Oct 2016 22:40:37, left: 0h 55min 41s
+#Progress => 83%, 47248.94 windows_added_to_db/second, Sunday, 02 Oct 2016 22:40:38, left: 0h 0min 5s
+#INFO: process 64811 getting coverage data for sample GM12878_B chunk 280704-288959.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#Progress => 84%, 882.42 windows_added_to_db/second, Sunday, 02 Oct 2016 22:40:52, left: 0h 3min 52s
+#INFO: process 64823 getting coverage data for sample GM12878_B chunk 272448-280703.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64814 getting coverage data for sample NA12878_PCRfree chunk 173376-181631.
+#Progress => 85%, 276.5 windows_added_to_db/second, Sunday, 02 Oct 2016 22:41:36, left: 0h 11min 34s
+#INFO: process 64824 getting coverage data for sample NA12878_PCRfree chunk 132096-140351.
+#INFO: process 64825 getting coverage data for sample GM12878_B chunk 0-8255.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64816 getting coverage data for sample NA12878_10x chunk 107328-115583.
+#INFO: process 64815 getting coverage data for sample GM12878_B chunk 33024-41279.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#INFO: process 64821 getting coverage data for sample GM12878_A chunk 255936-264191.
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.A/P5357_1006/outs/phased_possorted_bam.bai
+#INFO: process 64813 getting coverage data for sample GM12878_B chunk 74304-82559.
+#Progress => 86%, 208.36 windows_added_to_db/second, Sunday, 02 Oct 2016 22:42:36, left: 0h 14min 22s
+Warning: The index file is older than the data file: /proj/b2013064/private/ACTIVE/erik/GA_16_14.10X_Chromium_evaluation/data/GM12878.B/P5357_1007/outs/phased_possorted_bam.bai
+#Progress => 87%, 52464.12 windows_added_to_db/second, Sunday, 02 Oct 2016 22:42:36, left: 0h 0min 3s
+#Progress => 88%, 21334.25 windows_added_to_db/second, Sunday, 02 Oct 2016 22:42:37, left: 0h 0min 7s
+#INFO: process 64819 getting coverage data for sample NA12878_PCRfree chunk 189888-198143.
+#Progress => 89%, 223.2 windows_added_to_db/second, Sunday, 02 Oct 2016 22:43:32, left: 0h 10min 38s
+#Progress => 90%, 1222.88 windows_added_to_db/second, Sunday, 02 Oct 2016 22:43:42, left: 0h 1min 46s
+#Progress => 91%, 51684.61 windows_added_to_db/second, Sunday, 02 Oct 2016 22:43:42, left: 0h 0min 2s
+#Progress => 92%, 326.3 windows_added_to_db/second, Sunday, 02 Oct 2016 22:44:20, left: 0h 5min 23s
+#Progress => 93%, 45003.71 windows_added_to_db/second, Sunday, 02 Oct 2016 22:44:21, left: 0h 0min 2s
+#Progress => 94%, 243.54 windows_added_to_db/second, Sunday, 02 Oct 2016 22:45:12, left: 0h 5min 31s
+#Progress => 95%, 1478.39 windows_added_to_db/second, Sunday, 02 Oct 2016 22:45:20, left: 0h 0min 46s
+#Progress => 96%, 204.99 windows_added_to_db/second, Sunday, 02 Oct 2016 22:46:20, left: 0h 4min 32s
+#Progress => 97%, 53352.93 windows_added_to_db/second, Sunday, 02 Oct 2016 22:46:21, left: 0h 0min 1s
+#Progress => 98%, 32562.42 windows_added_to_db/second, Sunday, 02 Oct 2016 22:46:21, left: 0h 0min 1s
+#Progress => 99%, 64331.15 windows_added_to_db/second, Sunday, 02 Oct 2016 22:46:21, left: 0h 0min 0s
+#Progress => 100%, 32267.4 windows_added_to_db/second, Sunday, 02 Oct 2016 22:46:21, left: 0h 0min 0s
+sön okt  2 22:46:24 CEST 2016 AllDone
